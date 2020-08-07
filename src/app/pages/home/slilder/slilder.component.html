@@ -1,0 +1,15 @@
+<div class="slider_container">
+  <ng-image-slider
+    *ngIf="imageObject.length > 0"
+    [images]="imageObject"
+    [infinite]="true"
+    [autoSlide]="4"
+    [animationSpeed]="2.2"
+    [imageSize]="{ width: '100%', space: 0 }"
+    [imagePopup]="false"
+    #nav
+  ></ng-image-slider>
+  <div class="slider_cover_texts">
+    <span>Jungle Sweets</span>
+  </div>
+</div>

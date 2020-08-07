@@ -1,0 +1,246 @@
+<div class="admin_container">
+  <div class="add_slider_img">
+    <h1>Add or update slder image</h1>
+    <div>
+      <label for="sliderImg">
+        click on sheep to chose new img
+        <img src="../../../assets/img/admin/chose-file.gif" alt="" />
+      </label>
+      <input
+        type="file"
+        id="sliderImg"
+        (change)="uploadFile($event, 'slider-img', true)"
+      />
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <div class="slider_images" *ngFor="let item of sliderImageUrls$ | async">
+        <img [src]="item.url" alt="slide_img" />
+        <fa-icon
+          icon="times-circle"
+          (click)="deleteFromSlider(item.id, 'slider-img', item.url)"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+
+  <!--  About me  add edit part-->
+
+  <div class="about_me_cont">
+    <h1>About me</h1>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-form-field class="am_desc" fxFlex="40" fxFlex.xs="100">
+        <mat-label>About me in Armenian</mat-label>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          [(ngModel)]="amAboutme"
+          rows="5"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="am_desc" fxFlex="40" fxFlex.xs="100">
+        <mat-label>About me in English</mat-label>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          [(ngModel)]="enAboutme"
+          rows="5"
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <label for="aboutMeImg">
+      click on sheep to chose new img
+      <img src="../../../assets/img/admin/chose-file.gif" alt="" />
+    </label>
+    <input
+      type="file"
+      id="aboutMeImg"
+      (change)="uploadFile($event, 'aboutme-img', true)"
+    />
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <div class="slider_images" *ngFor="let item of aboutmeImageUrl$ | async">
+        <img [src]="item.url" alt="slide_img" />
+        <fa-icon
+          icon="times-circle"
+          (click)="deleteFromSlider(item.id, 'aboutme-img', item.url)"
+        ></fa-icon>
+      </div>
+    </div>
+    <button mat-raised-button color="accent" (click) = "saveAboutme()">Save about me</button>
+  </div>
+
+  <!--  Assortment add edit part-->
+
+  <div class="add_new_assortment_cont" #formDiv>
+    <h1>Add new assortment</h1>
+    <div class="add_new_assortment">
+      <div class="assortment_title">
+        <mat-form-field class="am_title">
+          <mat-label>Title Armenian </mat-label>
+          <input matInput type="text" [(ngModel)]="amTitile" />
+
+          <button
+            mat-button
+            *ngIf="amTitile"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="amTitile = ''"
+          >
+            <fa-icon icon="times-circle"></fa-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="en_title">
+          <mat-label>Title English </mat-label>
+          <input matInput type="text" [(ngModel)]="enTitile" />
+
+          <button
+            mat-button
+            *ngIf="enTitile"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="enTitile = ''"
+          >
+            <fa-icon icon="times-circle"></fa-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div
+        class="assortment_desc"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        fxLayoutGap="20px"
+      >
+        <mat-form-field class="am_desc">
+          <mat-label>Description in Armenian</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            [(ngModel)]="amDescription"
+            rows="5"
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field class="en_desc">
+          <mat-label>Description in English</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            [(ngModel)]="enDescription"
+            rows="5"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="price">
+        <mat-form-field class="am_title">
+          <mat-label>Price in AMD </mat-label>
+          <input matInput type="text" [(ngModel)]="price" />
+
+          <button
+            mat-button
+            *ngIf="amTitile"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="amTitile = ''"
+          >
+            <fa-icon icon="times-circle"></fa-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="upload_assortment_img">
+        <label for="assortmentImg">
+          click on sheep to chose new img
+          <img src="../../../assets/img/admin/chose-file.gif" alt="" />
+        </label>
+        <input
+          type="file"
+          id="assortmentImg"
+          multiple="true"
+          [(ngModel)]="assortmentUploadInput"
+          (change)="uploadAssortmentFiles($event, 'assortment-img', false)"
+        />
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+          <div
+            class="delete_assortment_image_div"
+            *ngFor="let item of adminService.tempUrls; index as i"
+          >
+            <img [src]="item.url" alt="" />
+            <fa-icon
+              icon="times-circle"
+              (click)="deleteFromSlider('', 'assortment-img', item.url)"
+            ></fa-icon>
+            <input
+              type="checkbox"
+              [checked]="item.main"
+              (change)="makeMainImage(i)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      *ngIf="idForUpdate === null"
+      class="add_new_assortment_button"
+      mat-raised-button
+      color="primary"
+      (click)="addNewAssortmentFunc()"
+    >
+      Add new assortment
+    </button>
+    <button
+      *ngIf="idForUpdate !== null"
+      class="add_new_assortment_button"
+      mat-raised-button
+      color="primary"
+      (click)="addNewAssortmentFunc()"
+    >
+      Update assortment
+    </button>
+  </div>
+
+  <!--  Assortment  show part-->
+
+  <div class="assortment_show_part_cont">
+    <h1>Existing assortment</h1>
+    <div class="assortment_show_div" *ngFor="let item of assortments$ | async">
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="editAssortment(item, formDiv)"
+      >
+        Edit
+      </button>
+      <h3>Title Armenian</h3>
+      <p>{{ item['data'].title.am }}</p>
+      <h3>Title English</h3>
+      <p>{{ item['data'].title.en }}</p>
+      <h3>Description Armenian</h3>
+      <p>{{ item['data'].description.am }}</p>
+      <h3>Description English</h3>
+      <p>{{ item['data'].description.en }}</p>
+      <h3>price</h3>
+      <p>{{ item['data'].price }}</p>
+      <h3>puctures</h3>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div
+          class="assortment_show_image_div"
+          *ngFor="let itemInitem of item['data'].urls; index as i"
+        >
+          <img [src]="itemInitem.url" alt="picture" />
+
+          <input
+            *ngIf="itemInitem.main"
+            type="checkbox"
+            [checked]="itemInitem.main"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<mat-toolbar fxLayout="column" fxLayoutAlign="space-between center">
+</mat-toolbar>
+
+<div
+  class="menu_side"
+  fxLayout="column"
+  fxLayoutAlign="center start"
+  fxLayoutGap="20px"
+>
+  <div
+    class="configuration"
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    fxLayoutGap="10px"
+    (click)="openConfigMenu()"
+  >
+    <span>configuration</span>
+    <img
+      [src]="'assets/img/flags/' + (languageFromUrl$ | async) + '.png'"
+      alt="flag"
+    />
+    <fa-icon iocn="right"></fa-icon>
+  </div>
+
+  <div class="sign_out">
+    sign Out
+  </div>
+
+  <!--  configuration part-->
+
+  <div
+    class="config_menu"
+    *ngIf="showConfigMenu"
+    fxLayout="column"
+    fxLayoutAlign="start start"
+    fxLayoutGap="20px"
+  >
+    <fa-icon iocn="right"></fa-icon>
+    <div (click)="openLanguageList()" class="select_lang_div">
+      <div class="lang_arrow" fxLayout="row" fxLayoutAlign="start center">
+        <span>language</span>
+        <fa-icon iocn="right"></fa-icon>
+        <fa-icon iocn="right"></fa-icon>
+      </div>
+
+      <div
+        class="language_list"
+        fxLayout="column"
+        fxLayoutGap="5px"
+        *ngIf="showLanguageList"
+      >
+        <div
+          class="lang_curr_div "
+          [ngClass]="{ selected_language: lang.selected }"
+          *ngFor="let lang of languageList"
+        >
+          <span
+            [title]="lang.name"
+            (click)="changeLanguage(lang.name)"
+            fxLayout="row"
+            fxLayoutAlign="start center "
+          >
+            <img
+              [src]="'assets/img/flags/' + lang.flag + '.png'"
+              alt="flag"
+              [title]="lang.name"
+            />
+            <span class=" lang_text">{{ lang.name }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="notifications">
+      Notifications
+    </div>
+  </div>
+</div>

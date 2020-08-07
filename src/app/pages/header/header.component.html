@@ -1,0 +1,59 @@
+<header>
+  <mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport="true"
+      role="navigation"
+      [mode]="'over'"
+    >
+      <mat-nav-list>
+        <side-nav-menu> </side-nav-menu>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <div class="logo_part">
+          <img src="../../../assets/img/logo/leaf_logo.svg" />
+        </div>
+
+        <div class="links_part">
+          <!-- <span class="login_part" (click)="openLoginModal()">
+            {{ 'HEADER.LOGIN' | translate }}</span
+          > -->
+
+          <div
+            class="language_part"
+            [matMenuTriggerFor]="LanguageMenu"
+            (menuClosed)="isMenuOpend = false"
+            (menuOpened)="isMenuOpend = true"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            {{ 'HEADER.LANGUAGESHOW' | translate }}
+
+            <fa-icon icon="angle-down" *ngIf="!isMenuOpend"></fa-icon>
+            <fa-icon icon="angle-up" *ngIf="isMenuOpend"></fa-icon>
+
+            <mat-menu #LanguageMenu="matMenu">
+              <div
+                class="language_list_div"
+                [ngClass]="{ selected_language: lang.selected }"
+                *ngFor="let lang of languageList"
+              >
+                <span
+                  [title]="lang.name"
+                  (click)="changeLanguage(lang.name)"
+                  fxLayout="row"
+                  fxLayoutAlign="start center "
+                >
+                  <span class="lang_text">{{ lang.showName }}</span>
+                </span>
+              </div>
+            </mat-menu>
+          </div>
+        </div>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>

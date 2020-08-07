@@ -1,0 +1,76 @@
+@import '../../../variable.scss';
+
+footer {
+  background-color: black;
+  color: #b5b5b5;
+  .first_part {
+    padding: 20px;
+    .contact {
+      font-family: Cormorant-italic;
+
+      h5 {
+        color: white;
+        font-family: Montserrat, sans-serif;
+        @include for-size(lt-sm) {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .logo_part {
+    .logo {
+      @include for-size(lt-sm) {
+        width: 90%;
+        margin-top: 40px;
+        text-align: center;
+        img {
+          width: 80%;
+        }
+      }
+    }
+    .social_icons {
+      a {
+        color: #c19d56;
+        font-size: 15px;
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        font-size: 15px;
+        color: #c19d56;
+        border: 1px solid #c19d56;
+        background-color: transparent;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        display: inline-block;
+        text-align: center;
+        span {
+          font-family: ElegantIcons;
+          font-style: normal;
+          display: inline-block;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        .social_facebook {
+          &::before {
+            content: '\e093';
+          }
+        }
+
+        .social_insta {
+          &::before {
+            content: '\e09a';
+          }
+        }
+      }
+    }
+  }
+  .copy_right {
+    padding: 10px;
+    border-top: 1px solid #c19d56;
+    text-align: center;
+    font-size: 17px;
+    font-family: Cormorant-italic;
+  }
+}

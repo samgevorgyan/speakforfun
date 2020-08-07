@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "LANGUAGESHOW": "En"
+  },
+  "HOME": {
+    "ASSORTMENTS": {
+      "CURRENCY": "AMD"
+    },
+    "ORDERBLOCK": {
+      "FORINFORMATION": "FOR INFORMATION OR ORDER PLEASE CLICK ON LINKS BELOW",
+      "CONTACTVIA": "Contact Via"
+    },
+    "ABOUTME": {
+      "STORY": "About us"
+    }
+  },
+  "FOOTER": {
+    "CONTACT": "Contact",
+    "EMAIL": "Email:"
+  },
+  "COMMON": {
+    "READMORE": "Read more",
+    "READLESS": "Read less"
+  }
+}

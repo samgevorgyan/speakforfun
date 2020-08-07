@@ -1,0 +1,55 @@
+<footer fxLayout="column" fxFlexAlign="center center">
+  <div
+    class="first_part"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-evenly center"
+  >
+    <div class="contact" fxLayout="column">
+      <h5>{{ 'FOOTER.CONTACT' | translate }}</h5>
+      <span>{{ 'FOOTER.EMAIL' | translate }} junglesweets@gmail.com</span>
+    </div>
+    <div
+      class="logo_part"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="20px"
+    >
+      <div class="logo">
+        <img src="./assets/img/logo/logo_default.svg" alt="junglesweets logo" />
+      </div>
+      <div
+        class="social_icons"
+        fxLayout="row"
+        fxFlexAlign="center center"
+        fxLayoutGap="30px"
+      >
+        <a
+          *ngIf="isMobile"
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=37493769877"
+        >
+          <fa-icon [icon]="['fab', 'whatsapp']"></fa-icon>
+        </a>
+
+        <a
+          *ngIf="isMobile"
+          target="_blank"
+          href="viber://chat?number=37493769877"
+        >
+          <fa-icon [icon]="['fab', 'viber']"></fa-icon>
+        </a>
+
+        <a target="_blank" href="https://www.facebook.com/coolrecipesandpics">
+          <span class="social_facebook"></span>
+        </a>
+
+        <a target="_blank" href="https://www.instagram.com/kitchen_jungle_sg/">
+          <span class="social_insta"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="copy_right">
+    <span>Copyright © 2020 Jungle Sweets Team ® </span>
+  </div>
+</footer>

@@ -1,0 +1,158 @@
+@import '../../../variable.scss';
+
+.admin_container {
+  width: 1280px;
+  background-color: white;
+  margin: auto;
+  width: 1280px;
+  @include for-size(lgm) {
+    width: 1200px;
+  }
+  @include for-size(md) {
+    width: 900px;
+  }
+  @include for-size(sm) {
+    width: 600px;
+  }
+  @include for-size(lt-sm) {
+    width: 100%;
+  }
+  label {
+    cursor: pointer;
+    img {
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+      border-radius: 10px;
+    }
+  }
+  input[type='file'] {
+    visibility: hidden;
+  }
+  .add_slider_img {
+    padding: 20px;
+    @include card_shadow;
+
+    .slider_images {
+      width: 200px;
+      height: 200px;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+      fa-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+  .about_me_cont {
+    padding: 20px;
+    margin: 20px 0;
+    @include card_shadow;
+    .slider_images {
+      width: 200px;
+      height: 200px;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+      fa-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+  .add_new_assortment_cont {
+    padding: 20px;
+    margin: 20px 0;
+    @include card_shadow;
+
+    button {
+      margin: 15px;
+    }
+    .assortment_title {
+      .am_title {
+        margin-right: 30px;
+      }
+    }
+    .assortment_desc {
+      .en_desc,
+      .am_desc {
+        width: 40%;
+        min-width: 200px;
+      }
+    }
+    .delete_assortment_image_div {
+      width: 200px;
+      height: 200px;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+      fa-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: red;
+        cursor: pointer;
+      }
+      input[type='checkbox'] {
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+      }
+    }
+  }
+  .assortment_show_part_cont {
+    padding: 20px;
+
+    .assortment_show_div {
+      padding: 20px;
+      margin: 20px 0;
+      @include card_shadow;
+      button {
+        margin: 20px;
+      }
+      .assortment_show_image_div {
+        width: 200px;
+        height: 200px;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        input[type='checkbox'] {
+          position: absolute;
+          left: 5px;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../variable.scss';
+.home_main_container {
+  background-color: white;
+  margin: auto;
+
+  width: 1280px;
+  @include for-size(lgm) {
+    width: 1200px;
+  }
+  @include for-size(md) {
+    width: 900px;
+  }
+  @include for-size(sm) {
+    width: 600px;
+  }
+  @include for-size(lt-sm) {
+    width: 100%;
+  }
+}

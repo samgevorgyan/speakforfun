@@ -1,0 +1,115 @@
+@import "../../../../variable";
+
+::ng-deep .mat-list-base {
+  padding: 0;
+}
+
+mat-toolbar {
+  height: auto;
+  padding: 7px 0;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  div {
+    color: white;
+    text-transform: capitalize;
+  }
+}
+
+.menu_side {
+  padding: 10px;
+  position: relative;
+
+  .links_part_ul {
+    li {
+      color: inherit;
+
+      &:nth-child(1) {
+        border-right: 1px solid white;
+
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .configuration {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+
+    span {
+      text-transform: capitalize;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    mat-icon {
+      position: absolute;
+      right: 0px;
+      margin: 0;
+    }
+  }
+
+  .sign_out {
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+  .config_menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    padding: 10px;
+
+    .back_icon {
+      cursor: pointer;
+      font-size: 1.8rem;
+    }
+
+    .select_lang_div {
+      width: 100%;
+
+      .lang_arrow {
+        cursor: pointer;
+        text-transform: capitalize;
+        position: relative;
+        mat-icon {
+          position: absolute;
+          right: 5px;
+        }
+      }
+
+      .language_list {
+        padding: 10px;
+        .lang_curr_div {
+          width: 100%;
+        }
+
+        .lang_text {
+          font-size: 1.2rem;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .notifications {
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  }
+}

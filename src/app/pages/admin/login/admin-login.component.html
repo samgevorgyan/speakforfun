@@ -1,0 +1,36 @@
+<div class="admin_login_container">
+  <form
+    [formGroup]="adminLoginForm"
+    (ngSubmit)="logIn()"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="30px"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="emailForm" placeholder="enter Email" />
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        formControlName="passwordForm"
+        placeholder="enter Password"
+      />
+
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent">Log in</button>
+  </form>
+</div>

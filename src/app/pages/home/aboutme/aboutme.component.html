@@ -1,0 +1,42 @@
+<div
+  class="about_me_container"
+  fxLayout="row"
+  fxLayout.lt-md="column"
+  fxLayoutAlign="center start"
+  fxLayoutAlign.lt-md="center center"
+  fxLayoutGap="10px"
+>
+  <div
+    class="my_story_div"
+    fxFlex="60"
+    fxFlex.lt-md="100"
+    fxFlexOrder.lt-md="1"
+  >
+    <h2>{{ 'HOME.ABOUTME.STORY' | translate }}</h2>
+    <div class="design_line">
+      <div class="design_line_wrapper">
+        <div class="design_line_rotate"></div>
+        <div class="design_line_line"></div>
+      </div>
+    </div>
+    <div class="story_text_div" *ngIf="aboutMeText$ | async as text">
+      <h6 [ngClass]="{ readmore: showAllText }">
+        {{
+          (currentLanguage$ | async) === 'am'
+            ? text[0]?.data.aboutme.am
+            : text[0]?.data.aboutme.en
+        }}
+      </h6>
+    </div>
+    <button (click)="showAllText = !showAllText">
+      {{
+        showAllText
+          ? ('COMMON.READLESS' | translate)
+          : ('COMMON.READMORE' | translate)
+      }}
+    </button>
+  </div>
+  <div class="my_img_div" fxFlex="40" fxFlex.lt-md="100" fxFlexOrder.lt-md="0">
+    <img *ngIf="aboutMeUrl$ | async as url" [src]="url[0].url" alt="" />
+  </div>
+</div>

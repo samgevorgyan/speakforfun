@@ -1,0 +1,90 @@
+@import '../../../../variable.scss';
+
+.about_me_container {
+  margin: auto;
+  padding: 40px;
+  .my_story_div {
+    h2 {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    button {
+      position: relative;
+      width: 200px;
+      margin: 0;
+      font-size: 23px;
+      line-height: 2em;
+      font-weight: 500;
+      font-family: Cormorant-italic;
+      outline: 0;
+      box-sizing: border-box;
+      padding: 0;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      background-color: rgb(193, 157, 86);
+
+      border-color: rgba(0, 0, 0, 0);
+      outline: rgb(193, 157, 86) solid 1px;
+      outline-offset: 2px;
+      margin-left: 3px;
+      margin-top: 15px;
+      text-transform: capitalize;
+      @include for-size(lt-sm) {
+        font-size: 1.2rem;
+      }
+    }
+    .design_line {
+      margin: 20px 8px;
+      .design_line_wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+
+        .design_line_rotate {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 8px;
+          height: 8px;
+          background-color: #c19d56;
+          border-radius: 0;
+          -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          -moz-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .design_line_line {
+          height: 1px;
+          width: 140px;
+          background-color: #c19d56;
+        }
+      }
+    }
+    .story_text_div {
+      .readmore {
+        height: auto;
+      }
+      h6 {
+        font-size: 24px;
+        line-height: 1.42em;
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+        height: 250px;
+        overflow: hidden;
+      }
+    }
+  }
+  .my_img_div {
+    img {
+      width: 70%;
+      height: auto;
+      box-shadow: 0px 0px 30px 1px black, 0px 1px 1px 0px black,
+        0px 1px 3px 0px black;
+      margin-top: 105px;
+    }
+  }
+}

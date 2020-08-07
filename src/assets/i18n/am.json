@@ -1,0 +1,26 @@
+{
+  "HEADER": {
+    "LANGUAGESHOW": "Հայ"
+  },
+
+  "HOME": {
+    "ASSORTMENTS": {
+      "CURRENCY": "դրամ"
+    },
+    "ORDERBLOCK": {
+      "FORINFORMATION": "Պատվիրելու կամ տեղեկատվություն ստանալու համար, սեղմեք ներքևի հղումներին",
+      "CONTACTVIA": "Կապվել"
+    },
+    "ABOUTME": {
+      "STORY": "Մեր մասին"
+    }
+  },
+  "FOOTER": {
+    "CONTACT": "Կապ",
+    "EMAIL": " Էլ․ հասցե:"
+  },
+  "COMMON":{
+    "READMORE": "Կարդալ ավելին",
+    "READLESS": "Փակել"
+  }
+}

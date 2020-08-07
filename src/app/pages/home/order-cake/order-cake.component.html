@@ -1,0 +1,49 @@
+<div class="order_cake_container" fxLayout="column" fxLayoutAlign="center end">
+  <div class="content_right" fxLayout="column" fxLayoutAlign="center center">
+    <div class="order_h2_div">
+      <h2>{{ 'HOME.ORDERBLOCK.FORINFORMATION' | translate }}</h2>
+    </div>
+    <div class="mkdf-separator">
+      <div class="mkdf-adv-sep-inner">
+        <div class="mkdf-adv-sep-line"></div>
+        <div class="mkdf-adv-sep-dot"></div>
+      </div>
+    </div>
+    <div
+      class="order_buttons"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="20px"
+    >
+      <a *ngIf="isMobile" href="viber://chat?number=37493769877">
+        <button mat-button class="viber_button">
+          {{ 'HOME.ORDERBLOCK.CONTACTVIA' | translate }}
+          <fa-icon [icon]="['fab', 'viber']"></fa-icon>
+        </button>
+      </a>
+
+      <a
+        *ngIf="isMobile"
+        href="https://api.whatsapp.com/send?phone=37493769877"
+      >
+        <button mat-button class="viber_button">
+          {{ 'HOME.ORDERBLOCK.CONTACTVIA' | translate }}
+          <fa-icon [icon]="['fab', 'whatsapp']"></fa-icon>
+        </button>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/kitchen_jungle_sg/">
+        <button mat-button class="insta_button">
+          {{ 'HOME.ORDERBLOCK.CONTACTVIA' | translate }}
+        </button>
+      </a>
+
+      <a target="_blank" href="https://www.facebook.com/coolrecipesandpics">
+        <button mat-button class="fb_button">
+          {{ 'HOME.ORDERBLOCK.CONTACTVIA' | translate }}
+         
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="last_white"></div>
