@@ -7,7 +7,7 @@ import { AssortmentsInterface } from 'src/app/models/assortments.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'jungle-admin',
+  selector: 'speakforfun-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })

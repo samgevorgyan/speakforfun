@@ -1,0 +1,19 @@
+@import "../../../../variable.scss";
+
+.first_section_container {
+  width: 100%;
+  height: 500px;
+  background-image: url("../../../../assets/img/home/backgrond.png");
+
+  .uzor_div {
+    img {
+      display: block;
+      width: calc(100% + 1.3px);
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+}

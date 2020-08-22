@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'jungle-login',
+  selector: 'speakforfun-login',
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss'],
 })

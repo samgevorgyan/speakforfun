@@ -34,6 +34,7 @@ $speakforfun-theme: mat-light-theme(
 * {
   margin: 0;
   padding: 0;
+  outline: none;
 }
 // @font-face {
 //   font-family: Cormorant-italic;
@@ -72,4 +73,9 @@ ul {
   li {
     cursor: pointer;
   }
+}
+
+.active {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }

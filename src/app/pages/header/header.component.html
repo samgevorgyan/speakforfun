@@ -23,8 +23,12 @@
 
         <div class="links_part">
           <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-            <li [routerLink]="'/home'">home</li>
-            <li [routerLink]="'admin'">Curses</li>
+            <li [routerLink]="['/home' | localize]" routerLinkActive="active">
+              home
+            </li>
+            <li [routerLink]="['/admin' | localize]" routerLinkActive="active">
+              Curses
+            </li>
             <li>Contac us</li>
           </ul>
         </div>

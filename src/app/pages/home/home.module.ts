@@ -7,17 +7,17 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { NgImageSliderModule } from 'ng-image-slider';
+import { FirstSectionComponent } from './first-section/first-section.component';
 
 export const routes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, FirstSectionComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    TranslateModule.forChild(),
+    TranslateModule,
     ShareModule,
-    NgImageSliderModule,
   ],
 })
 export class HomeModule {}
