@@ -1,6 +1,16 @@
 // $header_background_color: #4e645e;
 $header_background_color: #1d6141;
-$main_gold_color: #c19d56;
+$main_yellow_color: #ffe22a;
+@mixin main_gradient {
+  background: rgb(45, 56, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 56, 138, 1) 0%,
+    rgba(0, 174, 239, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 //size
 $default_height: 45px;
 $default_radius: 38px;

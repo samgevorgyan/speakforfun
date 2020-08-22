@@ -12,46 +12,49 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar>
+      <mat-toolbar
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        fxLayoutGap="10px"
+      >
         <div class="logo_part">
-          <img src="../../../assets/img/logo/leaf_logo.svg" />
+          <img src="../../../assets/img/logo/logo_default.svg" />
         </div>
 
         <div class="links_part">
-          <!-- <span class="login_part" (click)="openLoginModal()">
-            {{ 'HEADER.LOGIN' | translate }}</span
-          > -->
+          <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <li [routerLink]="'/home'">home</li>
+            <li [routerLink]="'admin'">Curses</li>
+            <li>Contac us</li>
+          </ul>
+        </div>
+        <div
+          class="language_part"
+          [matMenuTriggerFor]="LanguageMenu"
+          (menuClosed)="isMenuOpend = false"
+          (menuOpened)="isMenuOpend = true"
+        >
+          {{ 'HEADER.LANGUAGESHOW' | translate }}
 
-          <div
-            class="language_part"
-            [matMenuTriggerFor]="LanguageMenu"
-            (menuClosed)="isMenuOpend = false"
-            (menuOpened)="isMenuOpend = true"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-          >
-            {{ 'HEADER.LANGUAGESHOW' | translate }}
+          <fa-icon icon="angle-down" *ngIf="!isMenuOpend"></fa-icon>
+          <fa-icon icon="angle-up" *ngIf="isMenuOpend"></fa-icon>
 
-            <fa-icon icon="angle-down" *ngIf="!isMenuOpend"></fa-icon>
-            <fa-icon icon="angle-up" *ngIf="isMenuOpend"></fa-icon>
-
-            <mat-menu #LanguageMenu="matMenu">
-              <div
-                class="language_list_div"
-                [ngClass]="{ selected_language: lang.selected }"
-                *ngFor="let lang of languageList"
+          <mat-menu #LanguageMenu="matMenu">
+            <div
+              class="language_list_div"
+              [ngClass]="{ selected_language: lang.selected }"
+              *ngFor="let lang of languageList"
+            >
+              <span
+                [title]="lang.name"
+                (click)="changeLanguage(lang.name)"
+                fxLayout="row"
+                fxLayoutAlign="start center "
               >
-                <span
-                  [title]="lang.name"
-                  (click)="changeLanguage(lang.name)"
-                  fxLayout="row"
-                  fxLayoutAlign="start center "
-                >
-                  <span class="lang_text">{{ lang.showName }}</span>
-                </span>
-              </div>
-            </mat-menu>
-          </div>
+                <span class="lang_text">{{ lang.showName }}</span>
+              </span>
+            </div>
+          </mat-menu>
         </div>
       </mat-toolbar>
     </mat-sidenav-content>

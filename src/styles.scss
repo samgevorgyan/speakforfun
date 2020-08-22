@@ -35,27 +35,12 @@ $speakforfun-theme: mat-light-theme(
   margin: 0;
   padding: 0;
 }
-@font-face {
-  font-family: Cormorant-italic;
-  src: url('./assets/fonts/Cormorant-Italic.ttf');
-}
-@font-face {
-  font-family: Cormorant-regular;
-  src: url('./assets/fonts/Cormorant-Regular.ttf');
-}
-@font-face {
-  font-family: GreatVibes-Regular;
-  src: url('./assets/fonts/GreatVibes-Regular.ttf');
-}
-@font-face {
-  font-family: ElegantIcons;
-  src: url('./assets/fonts/ElegantIcons.ttf');
-}
+// @font-face {
+//   font-family: Cormorant-italic;
+//   src: url('./assets/fonts/Cormorant-Italic.ttf');
+// }
+
 html,
-body {
-  height: 100%;
-  background-image: url('assets/img/home/backgrond.png');
-}
 body {
   font-family: Cormorant-italic;
   font-size: 21px;
@@ -65,10 +50,11 @@ body {
   line-height: 31px;
   color: #000;
   letter-spacing: 0;
+  height: 100%;
 }
 
 .selected_language {
-  border: 1px solid $main_gold_color;
+  border: 1px solid $main_yellow_color;
 }
 
 .mat-toolbar,
@@ -79,4 +65,11 @@ body {
 .mat-toolbar h5,
 .mat-toolbar h6 {
   font-family: Cormorant-italic;
+}
+
+ul {
+  list-style: none;
+  li {
+    cursor: pointer;
+  }
 }

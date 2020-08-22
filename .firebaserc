@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "peakforfun"
+  },
+  "targets": {
+    "peakforfun": {
+      "hosting": {
+        "peakforfun": [
+          "peakforfun"
+        ]
+      }
+    }
+  }
+}

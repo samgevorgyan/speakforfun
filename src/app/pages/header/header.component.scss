@@ -1,24 +1,6 @@
 @import '../../../variable';
 
 header {
-  .sidenav-container {
-    width: 1280px;
-    margin: auto;
-
-    @include for-size(lgm) {
-      width: 1200px;
-    }
-    @include for-size(md) {
-      width: 900px;
-    }
-    @include for-size(sm) {
-      width: 600px;
-    }
-    @include for-size(lt-sm) {
-      width: 100%;
-    }
-  }
-
   .sidenav {
     width: 200px;
   }
@@ -30,50 +12,56 @@ header {
   mat-toolbar {
     height: 100%;
     background-color: white;
-    padding: 20px 0;
     position: relative;
-
+    padding: 0 12%;
     .logo_part {
-      margin: auto;
+      img {
+        width: 100px;
+        height: 100px;
+        vertical-align: middle;
+      }
     }
 
     .links_part {
       font-size: 21px;
-      color: $main_gold_color;
-      position: absolute;
-      right: 40px;
-      .language_part {
-        cursor: pointer;
-        text-transform: capitalize;
+      @include main_gradient;
+    }
+    .language_part {
+      @include main_gradient;
+      cursor: pointer;
+      text-transform: capitalize;
 
-        fa-icon {
-          margin-left: 5px;
-          margin-top: 4px;
-          font-size: 16px;
-        }
+      fa-icon {
+        margin-left: 5px;
+        margin-top: 4px;
+        font-size: 16px;
       }
     }
   }
 }
 
-::ng-deep .mat-menu-panel {
-  min-width: auto !important;
-  min-height: auto !important;
-  color: $main_gold_color;
-  .mat-menu-content:not(:empty) {
-    padding: 0 !important;
+::ng-deep .cdk-overlay-pane {
+  background-color: white;
+  .mat-menu-panel {
+    min-width: auto !important;
+    min-height: auto !important;
+    @include main_gradient;
 
-    .language_list_div {
-      padding: 7px;
-      cursor: pointer;
+    .mat-menu-content:not(:empty) {
+      padding: 0 !important;
 
-      img {
-        width: 25px;
-        margin-right: 10px;
-      }
+      .language_list_div {
+        padding: 7px;
+        cursor: pointer;
 
-      .lang_text {
-        text-transform: capitalize;
+        img {
+          width: 25px;
+          margin-right: 10px;
+        }
+
+        .lang_text {
+          text-transform: capitalize;
+        }
       }
     }
   }
